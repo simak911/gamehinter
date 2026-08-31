@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZNÁŠ NERA WEB APP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    
+</head>
+<body>
+    <h2>ZNÁŠ NERA 7?</h2>
+    <div id="codeinput">
+        <input id="teamid" type="text" placeholder="Týmový kód.">
+        <button id="resetbutton" class="mbutton">Resetovat tým</button>
+    </div>
+    <div>
+    <button id="statsbutton" class="mbutton">Ukaž statistiky</button>
+    </div>
+    <div id = "textinfo" class={{msgcolor}}>Info: {{msg}}</div>
+    <div id="statsinfo">{{stats | safe}}</div>
+    <script src="{{ url_for('static', filename='scripts/script_admin.js') }}"></script>
+</body>
+</html>
