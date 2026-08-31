@@ -5,9 +5,9 @@ import io
 from google.cloud import storage
 
 ENV = os.getenv("ENV", "prod")
-is_prod = (ENV == "prod")
+is_prod = False #(ENV == "prod")
 
-bucket_name = "znasnera6_bucket"
+bucket_name = "gamehinter_bucket"
 
 def get_reader(filename):
     if is_prod:

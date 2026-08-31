@@ -1,14 +1,14 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/znasnera6', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/gamehinter', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/znasnera6']
+    args: ['push', 'gcr.io/$PROJECT_ID/gamehinter']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
       [
-        'run', 'deploy', 'znasnera6',
-        '--image', 'gcr.io/$PROJECT_ID/znasnera6',
+        'run', 'deploy', 'gamehinter',
+        '--image', 'gcr.io/$PROJECT_ID/gamehinter',
         '--platform', 'managed',
         '--region', 'europe-central2',
         '--set-env-vars', 'ENV=prod',
@@ -16,7 +16,7 @@ steps:
       ]
 
 images:
-  - 'gcr.io/$PROJECT_ID/znasnera6'
+  - 'gcr.io/$PROJECT_ID/gamehinter'
 
 options:
   logging: CLOUD_LOGGING_ONLY
